@@ -345,10 +345,14 @@ var CompilerFragment = {
             vertexWorld: this.getOrCreateModelVertex(),
             shadowTexture: this.getOrCreateSampler('sampler2D', 'Texture' + tUnit),
             shadowSize: this.getOrCreateUniform(textureUniforms['RenderSize']),
-            shadowProjectionMatrix: this.getOrCreateUniform(
-                textureUniforms['ProjectionMatrix' + suffix]
+            shadowProjection: this.getOrCreateUniform(
+                textureUniforms['Projection' + suffix]
             ),
-            shadowViewMatrix: this.getOrCreateUniform(textureUniforms['ViewMatrix' + suffix]),
+
+            shadowViewRight: this.getOrCreateUniform(textureUniforms['ViewRight' + suffix]),
+            shadowViewUp: this.getOrCreateUniform(textureUniforms['ViewUp' + suffix]),
+            shadowViewLook: this.getOrCreateUniform(textureUniforms['ViewLook' + suffix]),
+
             shadowDepthRange: this.getOrCreateUniform(textureUniforms['DepthRange' + suffix]),
             shadowBias: this.getOrCreateUniform(shadowUniforms.bias)
         };
